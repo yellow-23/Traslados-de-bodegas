@@ -1,0 +1,27 @@
+# --- Datos de la empresa: NO deben salir del equipo ---
+
+# Excel maestro de inventario (VIN, stock, embarques)
+*.xlsx
+*.xlsm
+*.xls
+
+# Resultados de cada traslado (VIN reales)
+traslados_salida/
+
+# Consulta contra el ERP (nombres de vistas internas)
+queries/
+
+# Rutas locales y codigos de bodega de la ultima corrida.
+# El script lo regenera solo la primera vez que se usa.
+traslado_config.json
+
+# Credenciales, por si alguna vez se deja una copia aca
+.env
+*.env
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
