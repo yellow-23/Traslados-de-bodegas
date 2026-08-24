@@ -141,12 +141,17 @@ def armar_filas(vins, origen, destino, conflictos, indice):
                 "etapa": fila.get("ETAPA"),
                 "embarque": fila.get("EMBARQUE"),
                 "bodega_actual": bodega_actual,
+                "vigente": fila.get("VIGENTE"),
+                "nota_de_venta": fila.get("NOTA_DE_VENTA"),
+                "factura": fila.get("FACTURA"),
+                "reservado": fila.get("esta_reservado"),
             }
         else:
             observaciones.append("no esta en la base o no pasa el filtro")
             datos = {
                 "nro_stock": "", "empresa": "", "marca": "", "modelo": "",
                 "color": "", "etapa": "", "embarque": "", "bodega_actual": "",
+                "vigente": "", "nota_de_venta": "", "factura": "", "reservado": "",
             }
 
         filas.append({
@@ -167,6 +172,7 @@ LETRA_ROJA = Font(color="9C0006")
 ANCHOS = {
     "vin": 20, "nro_stock": 11, "empresa": 16, "marca": 12, "modelo": 24,
     "color": 14, "etapa": 7, "embarque": 14, "bodega_actual": 30,
+    "vigente": 9, "nota_de_venta": 14, "factura": 12, "reservado": 11,
     "bodega_destino": 30, "concatena": 22, "observacion": 55,
 }
 
