@@ -98,6 +98,9 @@ def resolver_bodegas(df, prefijo):
 def leer_vins(ruta_excel, hoja):
     """Columna A de una hoja de pegado. Devuelve (VIN en orden, repetidos)."""
     df = pd.read_excel(ruta_excel, sheet_name=hoja, usecols=COL_VIN_BUSQUEDA, dtype=str)
+    if df.shape[1] == 0:
+        # Hoja sin ningun dato en columna A: no hay VIN que evaluar.
+        return [], []
     df.columns = [COL_VIN]
     df[COL_VIN] = normalizar_vin(df[COL_VIN])
 
